@@ -1,5 +1,5 @@
-import project from "./projects-schema";
+import navbar from "./navbar-schema";
 
-const schemas = [project];
+const schemas = [navbar];
 
 export default schemas;

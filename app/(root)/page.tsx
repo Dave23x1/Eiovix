@@ -1,11 +1,5 @@
-import { getProjects } from "@/sanity/sanity-utils";
-
-const page = async () => {
-  const projects = await getProjects();
-
-  console.log("projects", projects);
-
-  return <div></div>;
+const page = () => {
+  return <div id=""></div>;
 };
 
 export default page;
