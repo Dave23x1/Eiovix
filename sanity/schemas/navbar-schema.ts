@@ -1,3 +1,5 @@
+import { Rule } from "@/types/schema-type";
+
 const navbar = {
   name: "navbar",
   title: "Navbar",
@@ -39,13 +41,13 @@ const navbar = {
               name: "link",
               title: "Link ",
               type: "string",
-              validation: (Rule) => Rule.required(),
+              validation: (Rule: Rule) => Rule.required(),
             },
             {
               name: "url",
               title: "URL",
               type: "url",
-              validation: (Rule) =>
+              validation: (Rule: Rule) =>
                 Rule.uri({
                   allowRelative: true,
                   scheme: ["http", "https"],
@@ -62,7 +64,7 @@ const navbar = {
                 ],
                 layout: "checkbox",
               },
-              validation: (Rule) => Rule.required(),
+              validation: (Rule: Rule) => Rule.required(),
             },
           ],
         },
