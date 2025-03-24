@@ -37,7 +37,8 @@ export async function getBanner() {
             "backgroundImage": backgroundImage{
               "url": asset->url,
               alt
-            }
+            },
+            position
         }`
   );
 }
