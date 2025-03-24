@@ -20,7 +20,7 @@ const Navbar = async () => {
       {links &&
         links.map((link, index) =>
           link.position === "left" ? (
-            <div key={index} className="pb-2 uppercase font-medium">
+            <div key={index} className="pb-2 uppercase font-medium text-[14px]">
               <Link href={link.url}>{link.name}</Link>
             </div>
           ) : null
@@ -33,7 +33,7 @@ const Navbar = async () => {
       {links &&
         links.map((link, index) =>
           link.position === "right" ? (
-            <div key={index} className="pb-2 uppercase font-medium">
+            <div key={index} className="pb-2 uppercase font-medium text-[14px]">
               <Link href={link.url}>{link.name}</Link>
             </div>
           ) : null

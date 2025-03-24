@@ -20,3 +20,24 @@ export async function getNavbar() {
         }`
   );
 }
+
+export async function getBanner() {
+  return createClient(config).fetch(
+    groq`*[_type == "banner"]{
+            _id,
+            _createdAt,
+            title,
+            description,
+            cta,
+            "ctaLink": ctaLink,
+            "image": image{
+              "url": asset->url,
+              alt
+            },
+            "backgroundImage": backgroundImage{
+              "url": asset->url,
+              alt
+            }
+        }`
+  );
+}
