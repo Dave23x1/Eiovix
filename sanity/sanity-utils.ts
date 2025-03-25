@@ -43,25 +43,26 @@ export async function getBanner() {
   );
 }
 
-export async function getServices() {
+export async function getTeams() {
   return createClient(config).fetch(
-    groq`*[_type == "services"]{
+    groq`*[_type == "team"]{
             _id,
             _createdAt,
-            name,
             title,
-            description[]{
-              ...,
-              markDefs[]{
-                ...,
-                _type == "link" => {
-                  "href": @.href
-                }
+            members[]{
+              _key,
+              "image": image{
+                "url": asset->url,
+                alt
+              },
+              name,
+              position,
+              description,
+              social[]{
+                _key,
+                name,
+                url
               }
-            },
-            images[]{
-              "url": asset->url,
-              alt
             }
         }`
   );
