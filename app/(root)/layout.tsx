@@ -5,7 +5,7 @@ import Navbar from "@/components/navbar";
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="px-50">
+    <div className="px-[200px]">
       <header>
         <Navbar />
       </header>
