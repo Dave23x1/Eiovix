@@ -16,7 +16,7 @@ const Navbar = async () => {
   });
 
   return (
-    <nav className="flex items-end justify-center gap-[150px] fixed top-0 left-0 right-0 z-50">
+    <nav className="navbar flex items-end justify-center gap-[170px] fixed top-0 left-0 right-0 z-50 pb-4">
       {links &&
         links.map((link, index) =>
           link.position === "left" ? (
