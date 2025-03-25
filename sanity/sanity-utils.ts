@@ -42,3 +42,27 @@ export async function getBanner() {
         }`
   );
 }
+
+export async function getServices() {
+  return createClient(config).fetch(
+    groq`*[_type == "services"]{
+            _id,
+            _createdAt,
+            name,
+            title,
+            description[]{
+              ...,
+              markDefs[]{
+                ...,
+                _type == "link" => {
+                  "href": @.href
+                }
+              }
+            },
+            images[]{
+              "url": asset->url,
+              alt
+            }
+        }`
+  );
+}
