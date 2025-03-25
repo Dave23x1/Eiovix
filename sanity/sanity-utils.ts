@@ -42,3 +42,28 @@ export async function getBanner() {
         }`
   );
 }
+
+export async function getTeams() {
+  return createClient(config).fetch(
+    groq`*[_type == "team"]{
+            _id,
+            _createdAt,
+            title,
+            members[]{
+              _key,
+              "image": image{
+                "url": asset->url,
+                alt
+              },
+              name,
+              position,
+              description,
+              social[]{
+                _key,
+                name,
+                url
+              }
+            }
+        }`
+  );
+}
